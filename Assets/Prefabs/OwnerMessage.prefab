@@ -717,6 +717,7 @@ GameObject:
   - component: {fileID: 7886620294440106292}
   - component: {fileID: 7886620294440106290}
   - component: {fileID: 64098666062985315}
+  - component: {fileID: 3811554199576797974}
   m_Layer: 5
   m_Name: OwnerMessage
   m_TagString: Untagged
@@ -790,6 +791,24 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3811554199576797974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886620294440106295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79d4138c0d147ae8cf5d07db1ff782c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Message:
+    Sender: 
+    Content: 
+  Nickname: {fileID: 7886620293826508000}
+  Content: {fileID: 7886620292761969111}
+  SendTime: {fileID: 7886620294794837124}
 --- !u!1 &7886620294794837129
 GameObject:
   m_ObjectHideFlags: 0
