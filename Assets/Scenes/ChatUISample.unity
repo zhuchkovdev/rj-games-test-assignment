@@ -259,7 +259,7 @@ MonoBehaviour:
     m_Bottom: 20
   m_ChildAlignment: 5
   m_Spacing: 10
-  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
@@ -305,8 +305,12 @@ PrefabInstance:
     - target: {fileID: 7886620292761969111, guid: cd448739479a74745a776c0b188fd851,
         type: 3}
       propertyPath: m_text
-      value: 'How are you? How are you? How are you? How are you? How are you? How
-        are you? How are you? '
+      value: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum'
       objectReference: {fileID: 0}
     - target: {fileID: 7886620292761969113, guid: cd448739479a74745a776c0b188fd851,
         type: 3}
@@ -367,16 +371,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7886620293965145851, guid: cd448739479a74745a776c0b188fd851,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7886620294007497570, guid: cd448739479a74745a776c0b188fd851,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7886620294382247045, guid: cd448739479a74745a776c0b188fd851,
         type: 3}
@@ -855,11 +849,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7886620292761969111, guid: cd448739479a74745a776c0b188fd851,
-        type: 3}
-      propertyPath: m_text
-      value: 'I. Am. Hungry. '
-      objectReference: {fileID: 0}
     - target: {fileID: 7886620292761969113, guid: cd448739479a74745a776c0b188fd851,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -918,16 +907,6 @@ PrefabInstance:
     - target: {fileID: 7886620293826508002, guid: cd448739479a74745a776c0b188fd851,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7886620293965145851, guid: cd448739479a74745a776c0b188fd851,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7886620294007497570, guid: cd448739479a74745a776c0b188fd851,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7886620294382247045, guid: cd448739479a74745a776c0b188fd851,
