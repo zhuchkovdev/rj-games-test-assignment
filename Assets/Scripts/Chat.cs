@@ -9,9 +9,6 @@ public class Chat : MonoBehaviour
   
   public string RandomMember => Members[Random.Range(0, Members.Count)];
 
-  private void Awake() => 
-    Debug.Log(Owner);
-
   public void ReceiveMessage(Message message) => 
     Container.AddMessage(message);
 
