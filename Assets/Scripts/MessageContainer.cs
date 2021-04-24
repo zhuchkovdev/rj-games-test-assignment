@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class MessageContainer : MonoBehaviour
 {
@@ -7,20 +9,62 @@ public class MessageContainer : MonoBehaviour
   public GameObject MessagePrefab;
   public GameObject ChatOwnerMessagePrefab;
 
-  public void AddMessage(Message message)
+  private readonly List<MessagePresenter> _presenters = new List<MessagePresenter>();
+
+  private void OnDestroy()
   {
-    if (message.Sender == Chat.Owner)
-    {
-      var presenter = Instantiate(ChatOwnerMessagePrefab, ContainerObject).GetComponent<MessagePresenter>();
-      presenter.Message = message;
-    }
-    else
-    {
-      var presenter = Instantiate(MessagePrefab, ContainerObject).GetComponent<MessagePresenter>();
-      presenter.Message = message;
-    }
+    foreach (MessagePresenter presenter in _presenters)
+      presenter.OnMessageDelete -= DeleteMessage;
   }
 
   private void Reset() =>
     Chat = FindObjectOfType<Chat>();
+
+  public void AddMessage(Message message)
+  {
+    MessagePresenter presenter = InstantiatePresenter(message);
+    presenter.OnMessageDelete += DeleteMessage;
+  }
+
+  private MessagePresenter InstantiatePresenter(Message message)
+  {
+    MessagePresenter presenter = message.Sender == Chat.Owner
+      ? Instantiate(ChatOwnerMessagePrefab, ContainerObject).GetComponent<MessagePresenter>()
+      : Instantiate(MessagePrefab, ContainerObject).GetComponent<MessagePresenter>();
+
+    MessagePresenter lastMessage = _presenters.LastOrDefault();
+    if (lastMessage && lastMessage.Message.Sender == message.Sender)
+      lastMessage.Redraw(asLast: false);
+
+    presenter.Message = message;
+    _presenters.Add(presenter);
+
+    return presenter;
+  }
+
+  private void DeleteMessage(Message message)
+  {
+    MessagePresenter presenter = _presenters.FirstOrDefault(o => o.Message == message);
+    if (!presenter)
+      return;
+
+    presenter.OnMessageDelete -= DeleteMessage;
+
+    var index = _presenters.IndexOf(presenter);
+
+    MessagePresenter previous = ValidIndex(index - 1) ? _presenters[index - 1] : null;
+    MessagePresenter next = ValidIndex(index + 1) ? _presenters[index + 1] : null;
+
+    if (ShouldRedrawPrevious()) 
+      previous.Redraw(asLast: true);
+
+    _presenters.Remove(presenter);
+    Destroy(presenter.gameObject);
+
+    bool ShouldRedrawPrevious() => 
+      previous && (!next || next && next.Message.Sender != message.Sender);
+  }
+
+  private bool ValidIndex(int index) => 
+    index >= 0 && index < _presenters.Count;
 }

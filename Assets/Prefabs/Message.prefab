@@ -390,12 +390,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79d4138c0d147ae8cf5d07db1ff782c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Message:
-    Sender: Egor Zhuchkov
-    Content: Hello
   Nickname: {fileID: 8100706148976308273}
   Content: {fileID: 8100706149924513030}
   SendTime: {fileID: 8100706148208195669}
+  DeleteButton: {fileID: 0}
+  Tail: {fileID: 8100706148988592682}
+  Portrait: {fileID: 8100706149030979507}
 --- !u!114 &8100706148515675619
 MonoBehaviour:
   m_ObjectHideFlags: 0
