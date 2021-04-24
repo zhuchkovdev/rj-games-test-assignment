@@ -492,7 +492,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 240177987}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1460422500}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &240177987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2446,6 +2457,7 @@ GameObject:
   - component: {fileID: 1460422497}
   - component: {fileID: 1460422498}
   - component: {fileID: 1460422499}
+  - component: {fileID: 1460422500}
   m_Layer: 0
   m_Name: ChatUI
   m_TagString: Untagged
@@ -2507,6 +2519,22 @@ MonoBehaviour:
     type: 3}
   ChatOwnerMessagePrefab: {fileID: 7886620294440106295, guid: cd448739479a74745a776c0b188fd851,
     type: 3}
+--- !u!114 &1460422500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460422496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3b2caeb63940d09b3c43af2b80c05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Container: {fileID: 1460422499}
+  DeleteMessageArea: {fileID: 1878354868}
+  SendMessageArea: {fileID: 1366879008}
+  TransitionTime: 0.3
 --- !u!1 &1479809601
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,7 +2921,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1669858560}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1460422500}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1669858560
 MonoBehaviour:
   m_ObjectHideFlags: 0

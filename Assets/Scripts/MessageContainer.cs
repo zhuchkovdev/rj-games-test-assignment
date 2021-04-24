@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -47,22 +48,31 @@ public class MessageContainer : MonoBehaviour
     MessagePresenter presenter = _presenters.FirstOrDefault(o => o.Message == message);
     if (!presenter)
       return;
+    
+    RedrawPreviousIfNeeded(presenter);
+    DestroyMessagePresenter(presenter);
+  }
 
+  private void DestroyMessagePresenter(MessagePresenter presenter)
+  {
     presenter.OnMessageDelete -= DeleteMessage;
+    _presenters.Remove(presenter);
+    Destroy(presenter.gameObject);
+  }
 
+  private void RedrawPreviousIfNeeded(MessagePresenter presenter)
+  {
     var index = _presenters.IndexOf(presenter);
 
     MessagePresenter previous = ValidIndex(index - 1) ? _presenters[index - 1] : null;
+
     MessagePresenter next = ValidIndex(index + 1) ? _presenters[index + 1] : null;
 
-    if (ShouldRedrawPrevious()) 
+    if (ShouldRedrawPrevious())
       previous.Redraw(asLast: true);
 
-    _presenters.Remove(presenter);
-    Destroy(presenter.gameObject);
-
-    bool ShouldRedrawPrevious() => 
-      previous && (!next || next && next.Message.Sender != message.Sender);
+    bool ShouldRedrawPrevious() =>
+      previous && (!next || next && next.Message.Sender != presenter.Message.Sender);
   }
 
   private bool ValidIndex(int index) => 
