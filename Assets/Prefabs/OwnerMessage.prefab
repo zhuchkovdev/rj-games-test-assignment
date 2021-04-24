@@ -948,7 +948,8 @@ MonoBehaviour:
   SendTime: {fileID: 7886620294794837124}
   DeleteButton: {fileID: 7154797643679564352}
   Tail: {fileID: 7886620293965145851}
-  Portrait: {fileID: 7886620294007497570}
+  PortraitObject: {fileID: 7886620294007497570}
+  PortraitImage: {fileID: 7886620293903574232}
 --- !u!1 &7886620294794837129
 GameObject:
   m_ObjectHideFlags: 0

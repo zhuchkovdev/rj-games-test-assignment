@@ -395,7 +395,8 @@ MonoBehaviour:
   SendTime: {fileID: 8100706148208195669}
   DeleteButton: {fileID: 0}
   Tail: {fileID: 8100706148988592682}
-  Portrait: {fileID: 8100706149030979507}
+  PortraitObject: {fileID: 8100706149030979507}
+  PortraitImage: {fileID: 8100706149065957385}
 --- !u!114 &8100706148515675619
 MonoBehaviour:
   m_ObjectHideFlags: 0

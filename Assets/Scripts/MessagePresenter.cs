@@ -9,11 +9,14 @@ public class MessagePresenter : MonoBehaviour
   public TMP_Text Nickname;
   public TMP_Text Content;
   public TMP_Text SendTime;
-  
+
   public Button DeleteButton;
   public GameObject Tail;
-  public GameObject Portrait;
-  
+  public GameObject PortraitObject;
+  public Image PortraitImage;
+
+  private const string TimeFormat = "HH:mm:ss";
+  private readonly CultureInfo _cultureInfoProvider = new CultureInfo("ru-RU");
   public event Action<Message> OnMessageDelete;
 
   private Message _message;
@@ -39,9 +42,10 @@ public class MessagePresenter : MonoBehaviour
 
   private void UpdatePresenter()
   {
-    Nickname.text = Message.Sender;
-    Content.text = Message.Content;
-    SendTime.text = Message.SendTime.ToString("HH:mm:ss", new CultureInfo("ru-RU"));
+    Nickname.SetText(Message.Sender);
+    Content.SetText(Message.Content);
+    SendTime.SetText(Message.SendTime.ToString(TimeFormat, _cultureInfoProvider));
+    PortraitImage.sprite = PortraitProvider.ForMember(Message.Sender);
   }
 
   private void OnDeleteButtonClick()
@@ -52,6 +56,6 @@ public class MessagePresenter : MonoBehaviour
   public void Redraw(bool asLast)
   {
     Tail.SetActive(asLast);
-    Portrait.SetActive(asLast);
+    PortraitObject.SetActive(asLast);
   }
 }

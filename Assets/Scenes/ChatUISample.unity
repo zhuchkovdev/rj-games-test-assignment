@@ -199,7 +199,6 @@ GameObject:
   - component: {fileID: 62221476}
   - component: {fileID: 62221475}
   - component: {fileID: 62221474}
-  - component: {fileID: 62221477}
   m_Layer: 5
   m_Name: SendButton
   m_TagString: Untagged
@@ -269,7 +268,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 62221477}
+      - m_Target: {fileID: 1366879012}
         m_MethodName: Send
         m_Mode: 1
         m_Arguments:
@@ -317,20 +316,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62221472}
   m_CullTransparentMesh: 0
---- !u!114 &62221477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62221472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 019a2499fc394a7b8cfb8d187cefe050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MessageField: {fileID: 1183226592}
-  Chat: {fileID: 1460422498}
 --- !u!1 &227551385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2305,6 +2290,7 @@ GameObject:
   - component: {fileID: 1366879009}
   - component: {fileID: 1366879011}
   - component: {fileID: 1366879010}
+  - component: {fileID: 1366879012}
   m_Layer: 5
   m_Name: SendMessageArea
   m_TagString: Untagged
@@ -2372,6 +2358,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366879008}
   m_CullTransparentMesh: 0
+--- !u!114 &1366879012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366879008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 019a2499fc394a7b8cfb8d187cefe050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MessageField: {fileID: 1626913949}
+  Chat: {fileID: 1460422498}
 --- !u!1 &1387813965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,10 +2496,10 @@ MonoBehaviour:
   Owner: Egor Zhuchkov
   Members:
   - Egor Zhuchkov
-  - Tomka
   - John Doe
-  - Jesus Christ
-  - Elon Mask
+  - Elon Musk
+  - Tim Cook
+  - Jeff Bezos
   Container: {fileID: 1460422499}
 --- !u!114 &1460422499
 MonoBehaviour:

@@ -6,6 +6,8 @@ public class Chat : MonoBehaviour
   [HideInInspector] public string Owner;
   public List<string> Members = new List<string>();
   public MessageContainer Container;
+  
+  public string RandomMember => Members[Random.Range(0, Members.Count)];
 
   private void Awake() => 
     Debug.Log(Owner);
